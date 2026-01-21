@@ -1,0 +1,320 @@
+[
+    {
+      "name": "Muscletech Nitro Tech Whey Protein 1.81kg",
+      "description": "Ultimate musclebuilding protein.",
+      "price": 150,
+      "image": ["uploads/whey1.jpg", "uploads/whey22.jpg"
+      ],
+      "category": "Protein",
+      "subCategory": "Whey",
+      "flavor": [
+        "Vanilla",
+        "Chocolate",
+        "Chocolate chip"
+      ],
+      "bestseller": false,
+      "stock": 20,
+      "onSale": true,
+      "offerPrice": 75
+    },
+    {
+      "name": "Optimum Nutrition Gold Whey",
+      "description": "Ultimate musclebuilding protein.",
+      "price": 150,
+      "image": ["uploads/whey3.jpg","uploads/whey11.jpg"
+      ],
+      "category": "Protein",
+      "subCategory": "Whey",
+      "flavor": [
+        "Vanilla",
+        "Chocolate",
+        "Strawberry"
+      ],
+      "bestseller": true,
+      "stock": 4
+    },
+    {
+      "name": "Kevin Levrone Signature ISO Whey 2kg",
+      "description": "Ultimate musclebuilding protein.",
+      "price": 140,
+      "image": ["uploads/whey4.jpg"
+      ],
+      "category": "Protein",
+      "subCategory": "Whey",
+      "flavor": [
+        "Vanilla",
+        "Chocolate",
+        "Strawberry"
+      ],
+      "bestseller": false,
+      "stock": 19
+    },
+    {
+      "name": "Muscletech Grass Fed Whey Protein",
+      "description": "Ultimate musclebuilding protein.",
+      "price": 140,
+      "image": [
+        "uploads/whey5.jpg"
+      ],
+      "category": "Protein",
+      "subCategory": "Whey",
+      "flavor": [
+        "Vanilla",
+        "Chocolate",
+        "Strawberry"
+      ],
+      "bestseller": false,
+      "stock": 7,
+      "onSale": true,
+      "offerPrice": 120
+    },
+    {
+      "name": "Dymatize ISO 100 2.3kg",
+      "description": "100% pure whey protein.",
+      "price": 100,
+      "image": [
+        "uploads/whey2.jpg"
+      ],
+      "category": "Protein",
+      "subCategory": "Whey",
+      "flavor": [
+        "Vanilla",
+        "Chocolate",
+        "Strawberry"
+      ],
+      "bestseller": true,
+      "stock": 12
+    },
+    {
+      "name": "C4 Orginal",
+      "description": "pre workout",
+      "price": 50,
+      "image": [
+        "uploads/pre1.webp"
+      ],
+      "category": "Pre-workout",
+      "subCategory": "Stim",
+      "flavor": [
+        "Rassberry",
+        "Green Apple",
+        "Strawberry"
+      ],
+      "bestseller": false,
+      "stock": 0
+    },
+    {
+      "name": "Ryse Godzilla",
+      "description": "preworkout",
+      "price": 70,
+      "image": [
+        "uploads/pre2.jpg"
+      ],
+      "category": "Pre-workout",
+      "subCategory": "Stim",
+      "flavor": [
+        "Rassberry",
+        "Green Apple",
+        "Strawberry"
+      ],
+      "bestseller": true,
+      "stock": 5
+    },
+    {
+      "name": "Optimum Nutrition Micronized Creatine",
+      "description": "creatine",
+      "price": 40,
+      "image": [
+        "uploads/cre1.jpg"
+      ],
+      "category": "Creatine",
+      "subCategory": "",
+      "flavor": [
+        "Rassberry",
+        "Green Apple",
+        "Strawberry"
+      ],
+      "bestseller": true,
+      "stock": 20
+    },
+    {
+      "name": "Muscletech Platinum 100% Creatine",
+      "description": "creatine",
+      "price": 40,
+      "image": [
+        "uploads/cre2.webp"
+      ],
+      "category": "Creatine",
+      "subCategory": "",
+      "flavor": [
+        "Rassberry",
+        "Green Apple",
+        "Strawberry"
+      ],
+      "bestseller": true,
+      "stock": 18
+    },
+    {
+      "name": "GNC PRO Creatine Monohydrate",
+      "description": "creatine",
+      "price": 40,
+      "image": [
+        "uploads/cre3.jpg"
+      ],
+      "category": "Creatine",
+      "subCategory": "",
+      "flavor": [
+        "Rassberry",
+        "Green Apple",
+        "Strawberry"
+      ],
+      "bestseller": true,
+      "stock": 0
+    },
+    {
+      "name": "Bulk Creatine Monohydrate",
+      "description": "creatine",
+      "price": 40,
+      "image": [
+        "uploads/cre4.jpg"
+      ],
+      "category": "Creatine",
+      "subCategory": "",
+      "flavor": [
+        "Rassberry",
+        "Green Apple",
+        "Strawberry"
+      ],
+      "bestseller": true,
+      "stock": 9
+    },
+    {
+      "name": "Kaged Creatine HCL",
+      "description": "creatine",
+      "price": 50,
+      "image": [
+        "uploads/cre5.webp"
+      ],
+      "category": "Creatine",
+      "subCategory": "",
+      "flavor": [
+        "Rassberry",
+        "Green Apple",
+        "Strawberry"
+      ],
+      "bestseller": true,
+      "stock": 11
+    },
+    {
+      "name": "Gorilla Mode",
+      "description": "pre workout",
+      "price": 60,
+      "image": [
+        "uploads/pre3.webp"
+      ],
+      "category": "Pre-workout",
+      "subCategory": "Stim",
+      "flavor": [
+        "Rassberry",
+        "Green Apple",
+        "Strawberry"
+      ],
+      "bestseller": true,
+      "stock": 3
+    },
+    {
+      
+      "name": "Total War",
+      "description": "pre workout",
+      "price": 50,
+      "image": [
+"uploads/pre4.webp"      ],
+      "category": "Pre-workout",
+      "subCategory": "Stim",
+      "flavor": [
+        "Rassberry",
+        "Green Apple",
+        "Strawberry"
+      ],
+      "bestseller": true,
+      "stock": 10
+    },
+    {
+      "name": "Alani Preworout",
+      "description": "pre workout",
+      "price": 50,
+      "image": [
+        "uploads/pre5.jpg"
+      ],
+      "category": "Pre-workout",
+      "subCategory": "Non-stim",
+      "flavor": [
+        "Rassberry",
+        "Green Apple",
+        "Strawberry"
+      ],
+      "bestseller": true,
+      "stock": 0,
+      "onSale": true,
+      "offerPrice": 9
+    },
+    {
+      "name": "Nature Made Gummies C Vitamin C",
+      "description": "Vitamin",
+      "price": 70,
+      "image": [
+       "uploads/vitamin1.jpg"
+      ],
+      "category": "Vitamins",
+      "subCategory": "",
+      "flavor": [
+        ""
+      ],
+      "bestseller": true,
+      "stock": 16
+    },
+    {
+      "name": "Now Omega 3 Fish Oil",
+      "description": "Vitamin",
+      "price": 70,
+      "image": [
+       "uploads/vitamin2.jpg"
+      ],
+      "category": "Vitamins",
+      "subCategory": "",
+      "flavor": [
+        ""
+      ],
+      "bestseller": true,
+      "stock": 22
+    },
+    {
+      "name": "GNC Select One Daily Multivitamin",
+      "description": "Vitamin",
+      "price": 55,
+      "image": [
+       "uploads/vitamin3.webp"
+      ],
+      "category": "Vitamins",
+      "subCategory": "",
+      "flavor": [
+        ""
+      ],
+      "bestseller": true,
+      "stock": 14
+    },
+    {
+      "name": "Laperva Pottasium 99mg",
+      "description": "Vitamin",
+      "price": 35,
+      "image": [
+       "uploads/vitamin5.jpg"
+      ],
+      "category": "Vitamins",
+      "subCategory": "",
+      "flavor": [
+        ""
+      ],
+      "bestseller": true,
+      "stock": 19
+    }
+  ]

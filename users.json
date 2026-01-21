@@ -1,0 +1,87 @@
+[
+  {
+    "legacyId": "231f",
+    "name": "david",
+    "email": "david@g.com",
+    "password": "123",
+    "cart": {
+      "aaaaa": {
+        "Vanilla": 1
+      }
+    },
+    "orders": [],
+    "role": "user",
+    "defaultAddress": {
+      "firstName": "afdasf",
+      "lastName": "qais",
+      "email": "david@g.com",
+      "street": "ambalakandy, thekedath purayil",
+      "city": "Kozhikode",
+      "zipcode": "673582",
+      "country": "India",
+      "phone": "231"
+    }
+  },
+  {
+    "legacyId": "62be",
+    "name": "admin",
+    "email": "admin@g.com",
+    "password": "1",
+    "cart": {},
+    "orders": [],
+    "role": "admin",
+    "defaultAddress": {
+      "firstName": "qais",
+      "lastName": "qais",
+      "email": "admin@g.com",
+      "street": "ambalakandy, thekedath purayil",
+      "city": "Kozhikode",
+      "zipcode": "673582",
+      "country": "India",
+      "phone": "3"
+    }
+  },
+  {
+    "legacyId": "37d3",
+    "name": "ADHIL",
+    "email": "adhil@gmail.com",
+    "password": "1",
+    "cart": {},
+    "orders": [],
+    "role": "admin",
+    "defaultAddress": {
+      "firstName": "Regular",
+      "lastName": "User",
+      "email": "user@store.com",
+      "street": "123 Main St",
+      "city": "Springfield",
+      "zipcode": "12345",
+      "country": "USA",
+      "phone": "555-12345"
+    }
+  },
+  {
+    "legacyId": "4eac",
+    "name": "abi",
+    "email": "abi@g.com",
+    "password": "1",
+    "cart": {},
+    "orders": [],
+    "role": "user",
+    "defaultAddress": null
+  },
+  {
+    "legacyId": "82c4",
+    "name": "abhinav",
+    "email": "abhinav@g.com",
+    "password": "1",
+    "cart": {
+      "aaaaa": {
+        "Vanilla": 1
+      }
+    },
+    "orders": [],
+    "role": "user",
+    "defaultAddress": null
+  }
+]
