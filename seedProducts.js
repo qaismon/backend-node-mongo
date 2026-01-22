@@ -8,7 +8,6 @@ const seedProducts = async () => {
     await mongoose.connect(process.env.MONGO_URI);
     console.log("MongoDB connected");
 
-    // OPTIONAL: clear old products
     await Product.deleteMany();
     console.log("Old products removed");
 
