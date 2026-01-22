@@ -11,7 +11,6 @@ app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
 app.use("/uploads", express.static(path.resolve(process.cwd(), "uploads")));
 app.use("/api/user", userRoutes);
-// Correct relative paths from src/app.js to src/routes/
 app.use("/api/products", require("./routes/product.routes"));
 app.use("/api/cart", require("./routes/cart.routes"));
 app.use("/api/orders", require("./routes/order.routes"));

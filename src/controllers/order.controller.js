@@ -25,13 +25,12 @@ exports.placeOrder = async (req, res) => {
       payment: payment,
       upiId: upiId || null,
       deliveryData: deliveryData,
-      status: "Pending", // FIXED: Must match the enum in your model!
+      status: "Pending", 
     });
 
-    // 3. Save to Database
     await newOrder.save();
 
-    // 4. Clear Cart in DB after successful order
+    
     await User.findByIdAndUpdate(userId, { cartData: {} });
 
     res.status(201).json({
@@ -42,7 +41,7 @@ exports.placeOrder = async (req, res) => {
 
   } catch (error) {
     console.error("--- DATABASE SAVE ERROR ---");
-    console.error(error); // This will show in your Node terminal
+    
     
     res.status(500).json({ 
       success: false, 
@@ -64,14 +63,17 @@ exports.getUserOrders = async (req, res) => {
 // 3. Get All Orders (Admin)
 exports.getAllOrders = async (req, res) => {
   try {
-    const orders = await Order.find({}).populate("user", "name email").sort({ date: -1 });
+    const orders = await Order.find({})
+      .populate('user', 'name email') 
+      .sort({ createdAt: -1 }); // Newest first
+
     res.json({ success: true, orders });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
 };
 
-// 4. Update Status (Admin) - Essential to prevent route crash
+// 4. Update Status (Admin) 
 exports.updateOrderStatus = async (req, res) => {
   try {
     const { orderId, status } = req.body;
@@ -87,25 +89,20 @@ exports.cancelOrder = async (req, res) => {
     const { orderId } = req.body;
     const userId = req.user.id || req.user._id;
 
-    // Find the order
     const order = await Order.findById(orderId);
 
     if (!order) {
       return res.status(404).json({ success: false, message: "Order not found" });
     }
 
-    // Security: Ensure the user cancelling the order is the one who placed it
-    // (Unless they are an admin, which you can check if you have req.user.role)
     if (order.user.toString() !== userId.toString()) {
       return res.status(401).json({ success: false, message: "Unauthorized action" });
     }
 
-    // Logic: Only allow cancellation if order is not already shipped/delivered
     if (order.status === "Shipped" || order.status === "Delivered") {
       return res.status(400).json({ success: false, message: "Cannot cancel order after it has been shipped." });
     }
 
-    // Update status to Cancelled
     order.status = "Cancelled";
     await order.save();
 

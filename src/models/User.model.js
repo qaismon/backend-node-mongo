@@ -1,9 +1,8 @@
 const mongoose = require("mongoose");
 
-/* ---------- Order Item Schema (for future use) ---------- */
 const orderItemSchema = new mongoose.Schema(
   {
-    id: String,        // product id (string)
+    id: String,        
     name: String,
     flavor: String,
     price: Number,
@@ -12,8 +11,7 @@ const orderItemSchema = new mongoose.Schema(
   { _id: false }
 );
 
-/* ---------- Order Schema (orders array exists, currently empty) ---------- */
-const orderSchema = new mongoose.Schema(
+ const orderSchema = new mongoose.Schema(
   {
     id: String,
     items: [orderItemSchema],
@@ -48,7 +46,6 @@ const orderSchema = new mongoose.Schema(
 /* ---------- User Schema ---------- */
 const userSchema = new mongoose.Schema(
   {
-    // OLD JSON id (optional but useful during migration)
     legacyId: {
       type: String
     },
@@ -70,11 +67,7 @@ const userSchema = new mongoose.Schema(
       required: true
     },
 
-    // Cart stored exactly like JSON
-    // example:
-    // {
-    //   "aaaaa": { "Vanilla": 1 }
-    // }
+  
     cart: {
       type: Object,
       default: {}

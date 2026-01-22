@@ -2,13 +2,13 @@ const express = require("express");
 const router = express.Router();
 const auth = require("../middleware/auth.middleware");
 const User = require("../models/User.model");
-const { listUsers } = require("../controllers/user.controller");
-/* ----------------------------------------
-   GET CURRENT USER (LOAD CART + ORDERS)
-   GET /api/users/me
----------------------------------------- */
+const { listUsers, deleteUser, updateUserRole} = require("../controllers/user.controller");
+const admin = require("../middleware/admin.middleware");
 
 
+router.get('/list',auth, admin, listUsers);
+router.delete('/:id', auth, admin, deleteUser)
+router.patch("/update-role/:id", auth, admin, updateUserRole);
 router.get("/me", auth, async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select("-password");
@@ -32,10 +32,6 @@ router.get("/me", auth, async (req, res) => {
   }
 });
 
-/* ----------------------------------------
-   UPDATE CART (PERSIST CART)
-   PATCH /api/users/cart
----------------------------------------- */
 router.patch("/cart", auth, async (req, res) => {
   try {
     const { cart } = req.body;
@@ -45,7 +41,6 @@ router.patch("/cart", auth, async (req, res) => {
       return res.status(404).json({ message: "User not found" });
     }
 
-    // Explicitly set the cart and mark it as modified
     user.cart = cart;
     user.markModified('cart'); 
     await user.save();

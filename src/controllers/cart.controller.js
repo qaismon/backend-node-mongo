@@ -1,9 +1,8 @@
 const Cart = require("../models/Cart.model");
 
-/* Add item to cart */
 exports.addToCart = async (req, res) => {
   const { product, flavor, quantity } = req.body;
-  const userId = req.userId; // (from auth later)
+  const userId = req.userId; 
 
   let cart = await Cart.findOne({ user: userId });
 
@@ -35,7 +34,6 @@ exports.getCart = async (req, res) => {
   res.json(cart);
 };
 
-/* Remove item */
 exports.removeFromCart = async (req, res) => {
   const { product, flavor } = req.body;
 
