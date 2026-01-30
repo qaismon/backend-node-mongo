@@ -2,13 +2,11 @@ const Order = require("../models/Order.model");
 const User = require("../models/User.model");
 const mongoose=require("mongoose")
 
-// 1. Place a new order
 exports.placeOrder = async (req, res) => {
   try {
     const { items, amount, payment, upiId, deliveryData } = req.body;
     const userId = req.user.id || req.user._id;
 
-    // 1. Format items to match Schema (especially the product ID)
     const formattedItems = items.map(item => ({
       product: new mongoose.Types.ObjectId(item.product), 
       name: item.name,
@@ -17,7 +15,6 @@ exports.placeOrder = async (req, res) => {
       quantity: Number(item.quantity)
     }));
 
-    // 2. Create the order document
     const newOrder = new Order({
       user: new mongoose.Types.ObjectId(userId),
       items: formattedItems,
@@ -49,7 +46,6 @@ exports.placeOrder = async (req, res) => {
     });
   }
 };
-// 2. Get User Orders
 exports.getUserOrders = async (req, res) => {
   try {
     const userId = req.user.id || req.user._id;
@@ -60,12 +56,11 @@ exports.getUserOrders = async (req, res) => {
   }
 };
 
-// 3. Get All Orders (Admin)
 exports.getAllOrders = async (req, res) => {
   try {
     const orders = await Order.find({})
       .populate('user', 'name email') 
-      .sort({ createdAt: -1 }); // Newest first
+      .sort({ createdAt: -1 }); 
 
     res.json({ success: true, orders });
   } catch (error) {
@@ -73,7 +68,6 @@ exports.getAllOrders = async (req, res) => {
   }
 };
 
-// 4. Update Status (Admin) 
 exports.updateOrderStatus = async (req, res) => {
   try {
     const { orderId, status } = req.body;
