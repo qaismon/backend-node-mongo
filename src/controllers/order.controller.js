@@ -6,7 +6,7 @@ const crypto = require("crypto");
 
 // Initialize Razorpay Instance
 const razorpayInstance = new Razorpay({
-    key_id: process.env.RAZORPAY_KEY_ID,
+    key_id: process.env.VITE_RAZORPAY_KEY_ID,
     key_secret: process.env.RAZORPAY_KEY_SECRET,
 });
 
@@ -62,7 +62,7 @@ exports.verifyRazorpay = async (req, res) => {
             user: new mongoose.Types.ObjectId(userId),
             items: formattedItems,
             amount: Number(amount),
-            payment: true, // Mark as paid
+            payment: "Paid", // Mark as paid
             deliveryData: formData,
             status: "Pending",
             date: Date.now()
