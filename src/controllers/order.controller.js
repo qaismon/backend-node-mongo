@@ -10,35 +10,39 @@ const razorpayInstance = new Razorpay({
     key_secret: process.env.RAZORPAY_KEY_SECRET,
 });
 
+
 /**
  * Helper to update stock levels
  * @param {Array} items - The items array from the order
  * @param {Number} multiplier - Use -1 to reduce stock, 1 to restore it
  */
-const updateInventory = async (items) => {
-    for (const item of items) {
+const updateInventory = async (items, multiplier) => {
+    // Use Promise.all so we wait for every single item to update in the DB
+    await Promise.all(items.map(async (item) => {
         try {
-            // Force the ID into a Mongoose ObjectId format
             const productId = new mongoose.Types.ObjectId(item.product);
-            const quantityToReduce = Number(item.quantity);
+            
+            // This is the magic line: 
+            // If multiplier is -1, change is negative. If 1, change is positive.
+            const stockChange = Number(item.quantity) * multiplier;
 
-            console.log(`ATTEMPTING UPDATE: Product ${productId} | Quantity: -${quantityToReduce}`);
+            console.log(`INVENTORY UPDATE: Product ${productId} | Change: ${stockChange}`);
 
             const updatedProduct = await Product.findByIdAndUpdate(
                 productId,
-                { $inc: { stock: -quantityToReduce } },
+                { $inc: { stock: stockChange } }, // Increment by the calculated change
                 { new: true, runValidators: true }
             );
 
             if (updatedProduct) {
-                console.log(`SUCCESS: New stock for ${updatedProduct.name} is ${updatedProduct.stock}`);
+                console.log(`SUCCESS: ${updatedProduct.name} stock is now ${updatedProduct.stock}`);
             } else {
-                console.error(`FAILURE: Product ID ${item.product} not found in Database.`);
+                console.error(`FAILURE: Product ID ${item.product} not found.`);
             }
         } catch (err) {
-            console.error(`CRITICAL ERROR during stock update for ${item.product}:`, err.message);
+            console.error(`CRITICAL ERROR for product ${item.product}:`, err.message);
         }
-    }
+    }));
 };
 
 // --- RAZORPAY INITIALIZATION ---
