@@ -1,6 +1,5 @@
 const User = require("../models/User.model");
 
-
 // GET ALL USERS (Admin Only)
 exports.listUsers = async (req, res) => {
   try {

@@ -6,11 +6,6 @@ const productController = require("../controllers/product.controller");
 const auth = require("../middleware/auth.middleware");
 const admin = require("../middleware/admin.middleware");
 
-console.log("--- ROUTE DEPENDENCY CHECK ---");
-console.log("auth is:", typeof auth);
-console.log("admin is:", typeof admin);
-console.log("addProduct is:", typeof productController.addProduct);
-console.log("------------------------------");
 
 // USER ROUTES
 router.get("/", productController.getAllProducts);
